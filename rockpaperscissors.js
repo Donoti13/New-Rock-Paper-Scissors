@@ -3,96 +3,128 @@ var rockBtn = document.getElementById("rockBtn");
 var paperBtn = document.getElementById("paperBtn");
 var scissorsBtn = document.getElementById("scissorsBtn");
 
+
 var playerSelection;
 var computerChoice;
-
-
-//GET PLAYER SELECTION
-//function playRound(playerSelection, computerSelection) {
-
-  rockBtn.addEventListener('click', () => {
-
-    playerSelection = rockBtn;
-    console.log("you pressed rock!");
-
- });
-
-  paperBtn.addEventListener('click', () => {
-
-    playerSelection = paperBtn;
-    console.log("you pressed paper!");
-});
-
-  scissorsBtn.addEventListener('click', () => {
-
-    playerSelection = scissorsBtn;
-    console.log("you pressed scissors!");
-});
 
 
 //GET COMPUTER RANDOM SELECTION
 
 function getComputerChoice() {
 
-  randomValue = Math.floor(Math.random() * 3);
+  let randomValue = Math.floor(Math.random() * 3);
 
 
 if (randomValue === 2) {
-  console.log("rock");
+  computerChoice = "rock";
 } 
 
  else if (randomValue === 1) {
-  console.log("paper");
+  computerChoice = "paper";
  }
 
   else {
-      console.log("scissors");
+       computerChoice = "scissors";
   }
+
+  console.log(computerChoice);
 }
 
 
-getComputerChoice();
+//getComputerChoice();
 
 
 computerSelection = getComputerChoice();
-//}
+
+
+
+//GET PLAYER SELECTION
+
+  rockBtn.addEventListener('click', () => {
+
+    playerSelection = "rock";
+    console.log("you pressed rock!");
+  
+    playRound();
+
+ });
+
+  paperBtn.addEventListener('click', () => {
+
+    playerSelection = "paper";
+    console.log("you pressed paper!");
+    playRound();
+});
+
+  scissorsBtn.addEventListener('click', () => {
+
+    playerSelection = "scissors";
+    console.log("you pressed scissors!");
+
+
+    playRound();
+});
+
+
+
+/*
+function playerSelection() {
+
+  if (playerSelection = rockBtn) {
+    return rockBtn;
+  }
+   if (playerSelection = paperBtn) {
+
+    return paperBtn;
+  }
+    if (playerSelection = scissorsBtn) {
+    return scissorsBtn;
+  }
+
+  else { 
+    return "wrong";
+  }
+}
+
+console.log(playerSelection());
+*/
+
+
+
+function playRound() {
+  // LINKKIG GAME COMPARISONS
+
+//function playGame() {
+  if (playerSelection == "rock" &&  computerChoice == "rock" || 
+    playerSelection == "paper" && computerChoice == "paper" || 
+    playerSelection == "scissors" && computerChoice == "scissors") {
+    
+      console.log("draw");
+  }
+
+  if (playerSelection === "rock" &&  computerChoice === "scissors" || 
+    playerSelection === "paper" && computerChoice === "rock" || 
+    playerSelection === "scissors" && computerChoice === "paper") {
+
+
+      console.log("you win");
+  } 
+
+if (playerSelection === "rock" &&  computerChoice === "paper" || 
+    playerSelection === "paper" && computerChoice === "scissors" || 
+    playerSelection === "scissors" && computerChoice === "rock") {
+
+
+      console.log("pc win");
+  } 
+
+}
 
 //console.log(playRound());
 
 
-function playRound(playerSelection, computerSelection) {
-  // LINKKIG GAME COMPARISONS
-
-function playGame () {
-  if (playerSelection === rockBtn &&  computerSelection === "rock" || 
-    playerSelection === paperBtn && computerSelection === "paper" || 
-    playerSelection === scissorsBtn && computerSelection === "scissors") {
-
-    console.log("draw");
-  }
-
-  else if (playerSelection === rockBtn &&  computerSelection === "scissors" || 
-    playerSelection === paperBtn && computerSelection === "rock" || 
-    playerSelection === scissorsBtn && computerSelection === "paper") {
 
 
-    console.log("Player wins");
-  } 
-
-  else if (playerSelection === rockBtn &&  computerSelection === "paper" || 
-    playerSelection === paperBtn && computerSelection === "scissors" || 
-    playerSelection === scissorsBtn && computerSelection === "rock") {
-
-
-    console.log("Computer wins");
-  } 
-
-}
-console.log(playGame());
-
-}
-
-console.log(playRound());
 //PLAY GAME
 
 //
