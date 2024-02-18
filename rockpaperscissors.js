@@ -8,24 +8,24 @@ var computerChoice;
 
 
 //GET PLAYER SELECTION
-function playRound(playerSelection, computerSelection) {
+//function playRound(playerSelection, computerSelection) {
 
   rockBtn.addEventListener('click', () => {
 
-    playerSelection = "rock";
+    playerSelection = rockBtn;
     console.log("you pressed rock!");
 
  });
 
   paperBtn.addEventListener('click', () => {
 
-    playerSelection = "paper";
+    playerSelection = paperBtn;
     console.log("you pressed paper!");
 });
 
   scissorsBtn.addEventListener('click', () => {
 
-    playerSelection = "scissor";
+    playerSelection = scissorsBtn;
     console.log("you pressed scissors!");
 });
 
@@ -49,45 +49,53 @@ if (randomValue === 2) {
       console.log("scissors");
   }
 }
-  getComputerChoice();
 
 
-  // LINKKIG GAME COMPARISONS
+getComputerChoice();
+
 
 computerSelection = getComputerChoice();
+//}
+
+//console.log(playRound());
 
 
+function playRound(playerSelection, computerSelection) {
+  // LINKKIG GAME COMPARISONS
 
-  if (playerSelection === "rock" &&  computerSelection === "rock" || 
-    playerSelection === "paper" && computerSelection === "paper" || 
-    playerSelection === "scissors" && computerSelection === "scissors") {
+function playGame () {
+  if (playerSelection === rockBtn &&  computerSelection === "rock" || 
+    playerSelection === paperBtn && computerSelection === "paper" || 
+    playerSelection === scissorsBtn && computerSelection === "scissors") {
 
     console.log("draw");
   }
 
-  else if (playerSelection === "rock" &&  computerSelection === "scissors" || 
-    playerSelection === "paper" && computerSelection === "rock" || 
-    playerSelection === "scissors" && computerSelection === "paper") {
+  else if (playerSelection === rockBtn &&  computerSelection === "scissors" || 
+    playerSelection === paperBtn && computerSelection === "rock" || 
+    playerSelection === scissorsBtn && computerSelection === "paper") {
 
 
     console.log("Player wins");
   } 
 
-  else if (playerSelection === "rock" &&  computerSelection === "paper" || 
-    playerSelection === "paper" && computerSelection === "scissors" || 
-    playerSelection === "scissors" && computerSelection === "rock") {
+  else if (playerSelection === rockBtn &&  computerSelection === "paper" || 
+    playerSelection === paperBtn && computerSelection === "scissors" || 
+    playerSelection === scissorsBtn && computerSelection === "rock") {
 
 
     console.log("Computer wins");
   } 
 
 }
+console.log(playGame());
+
+}
 
 console.log(playRound());
-
 //PLAY GAME
 
-//function playGame ()
+//
 
 
 
