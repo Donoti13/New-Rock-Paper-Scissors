@@ -1,4 +1,122 @@
 
+var rockBtn = document.getElementById("rockBtn");
+var paperBtn = document.getElementById("paperBtn");
+var scissorsBtn = document.getElementById("scissorsBtn");
+
+var playerSelection;
+var computerChoice;
+
+
+//GET PLAYER SELECTION
+function playRound(playerSelection, computerSelection) {
+
+  rockBtn.addEventListener('click', () => {
+
+    playerSelection = "rock";
+    console.log("you pressed rock!");
+
+ });
+
+  paperBtn.addEventListener('click', () => {
+
+    playerSelection = "paper";
+    console.log("you pressed paper!");
+});
+
+  scissorsBtn.addEventListener('click', () => {
+
+    playerSelection = "scissor";
+    console.log("you pressed scissors!");
+});
+
+
+//GET COMPUTER RANDOM SELECTION
+
+function getComputerChoice() {
+
+  randomValue = Math.floor(Math.random() * 3);
+
+
+if (randomValue === 2) {
+  console.log("rock");
+} 
+
+ else if (randomValue === 1) {
+  console.log("paper");
+ }
+
+  else {
+      console.log("scissors");
+  }
+}
+  getComputerChoice();
+
+
+  // LINKKIG GAME COMPARISONS
+
+computerSelection = getComputerChoice();
+
+
+
+  if (playerSelection === "rock" &&  computerSelection === "rock" || 
+    playerSelection === "paper" && computerSelection === "paper" || 
+    playerSelection === "scissors" && computerSelection === "scissors") {
+
+    console.log("draw");
+  }
+
+  else if (playerSelection === "rock" &&  computerSelection === "scissors" || 
+    playerSelection === "paper" && computerSelection === "rock" || 
+    playerSelection === "scissors" && computerSelection === "paper") {
+
+
+    console.log("Player wins");
+  } 
+
+  else if (playerSelection === "rock" &&  computerSelection === "paper" || 
+    playerSelection === "paper" && computerSelection === "scissors" || 
+    playerSelection === "scissors" && computerSelection === "rock") {
+
+
+    console.log("Computer wins");
+  } 
+
+}
+
+console.log(playRound());
+
+//PLAY GAME
+
+//function playGame ()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -446,7 +564,7 @@ console.log(filtered);
 
 */
 
-
+/*
 
 const container = document.querySelector("#container");
 
@@ -576,6 +694,7 @@ button.addEventListener('click', () => {
 
 */
 
+/*
 //WORKS BUTTON COLOR CHANGE ALSO WITH MULTIPLE BUTTONS
 
 const buttons = document.querySelectorAll('button');
@@ -600,3 +719,4 @@ button.addEventListener('click', function (e) {
 <button id="3">Click Me</button>
 </div>
 
+*/
