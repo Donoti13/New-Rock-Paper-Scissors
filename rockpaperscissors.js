@@ -31,8 +31,6 @@ if (randomValue === 2) {
 }
 
 
-//getComputerChoice();
-
 
 computerSelection = getComputerChoice();
 
@@ -66,40 +64,21 @@ computerSelection = getComputerChoice();
 });
 
 
-
-/*
-function playerSelection() {
-
-  if (playerSelection = rockBtn) {
-    return rockBtn;
-  }
-   if (playerSelection = paperBtn) {
-
-    return paperBtn;
-  }
-    if (playerSelection = scissorsBtn) {
-    return scissorsBtn;
-  }
-
-  else { 
-    return "wrong";
-  }
-}
-
-console.log(playerSelection());
-*/
-
-
+let userScore;
+let computerScore;
 
 function playRound() {
   // LINKKIG GAME COMPARISONS
 
-//function playGame() {
+ 
   if (playerSelection == "rock" &&  computerChoice == "rock" || 
     playerSelection == "paper" && computerChoice == "paper" || 
     playerSelection == "scissors" && computerChoice == "scissors") {
-    
+      
       console.log("draw");
+
+      userScore = userScore + 0;
+      computerScore = computerScore + 0;
   }
 
   if (playerSelection === "rock" &&  computerChoice === "scissors" || 
@@ -108,6 +87,9 @@ function playRound() {
 
 
       console.log("you win");
+
+      userScore = userScore + 1;
+      computerScore = computerScore + 0;
   } 
 
 if (playerSelection === "rock" &&  computerChoice === "paper" || 
@@ -116,22 +98,44 @@ if (playerSelection === "rock" &&  computerChoice === "paper" ||
 
 
       console.log("pc win");
+
+      computerScore = computerScore + 1;
+      userScore = userScore + 0;
   } 
 
 }
 
-//console.log(playRound());
+let score;
+let scoreboard;
+
+function game() {
+
+  for (let i = 0; i <= 5; i++) {
+ 
+    i = scoreboard;
+
+  if (score = "draw") {
+
+    userScore = +1
+    
+  }
 
 
+  else if (score = "you win") {
 
+    userScore = +1;
+    
+}
+  else {
 
-//PLAY GAME
+    computerScore = +1;
+    
+  }
+  console.log(i);
 
-//
+}
 
-
-
-
+}
 
 
 
