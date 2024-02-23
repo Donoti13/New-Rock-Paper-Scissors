@@ -4,7 +4,7 @@ var paperBtn = document.getElementById("paperBtn");
 var scissorsBtn = document.getElementById("scissorsBtn");
 
 
-var playerSelection;
+
 var computerChoice;
 
 
@@ -37,7 +37,7 @@ computerSelection = getComputerChoice();
 
 
 //GET PLAYER SELECTION
-
+/*
   rockBtn.addEventListener('click', () => {
 
     playerSelection = "rock";
@@ -63,9 +63,67 @@ computerSelection = getComputerChoice();
     playRound();
 });
 
+*/
 
-let userScore;
-let computerScore;
+
+var playerSelection = prompt("enter selection: rock, paper or scissors", '');
+
+ if (playerSelection == "rock") {
+ 
+   console.log('you pressed rock');
+   playRound();
+ }
+ 
+    else if (playerSelection == "paper") {
+
+    console.log('you pressed paper');
+    playRound();
+ }
+
+    else if (playerSelection == "scissors") {
+
+    console.log('you pressed scissors');
+    playRound();
+ }
+
+    else {
+    console.log('wrong choice!');
+
+ };
+
+
+ var wins = 0;
+ var losses = 0;
+
+
+
+ let score;
+
+ for (let i = 0; i < 4; i++) {
+  
+   i = score;
+   score = playRound();
+ };
+
+ 
+
+if (wins > losses) {
+  console.log("You won more games!");
+}
+
+else if (wins < losses) {
+
+  console.log("You lost more games");
+
+}
+
+else {
+  console.log("Its a draw!");
+};
+
+
+
+
 
 function playRound() {
   // LINKKIG GAME COMPARISONS
@@ -77,82 +135,77 @@ function playRound() {
       
       console.log("draw");
 
-      userScore = userScore + 0;
-      computerScore = computerScore + 0;
+   
   }
 
   if (playerSelection === "rock" &&  computerChoice === "scissors" || 
     playerSelection === "paper" && computerChoice === "rock" || 
     playerSelection === "scissors" && computerChoice === "paper") {
 
-
+      wins++;
       console.log("you win");
 
-      userScore = userScore + 1;
-      computerScore = computerScore + 0;
+     
   } 
 
 if (playerSelection === "rock" &&  computerChoice === "paper" || 
     playerSelection === "paper" && computerChoice === "scissors" || 
     playerSelection === "scissors" && computerChoice === "rock") {
 
-
+      losses++;
       console.log("pc win");
-
-      computerScore = computerScore + 1;
-      userScore = userScore + 0;
+    
   } 
 
-}
+ 
+};
 
+
+
+console.log("You have won " + wins + " games!");
+console.log("You have lost " + losses + " games!");
+
+
+
+
+/*
 let score;
 let scoreboard;
+let userScore;
+let pcScore;
 
 function game() {
 
-  for (let i = 0; i <= 5; i++) {
+  for (let i = 0; i < 4; i++) {
  
-    i = scoreboard;
+    i = score;
+    score = playRound();
 
   if (score = "draw") {
 
-    userScore = +1
+    userScore = 0;
+    pcScore = 0;
+    scoreboard = 
     
   }
-
 
   else if (score = "you win") {
 
     userScore = +1;
-    
+    pcScore = 0;
 }
   else {
 
-    computerScore = +1;
+    userScore = 0;
+    pcScore = +1;
     
   }
-  console.log(i);
+  
+ };
+};
 
-}
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(game());
+*/
 
 
 
