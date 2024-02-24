@@ -25,9 +25,13 @@ if (randomValue === 2) {
 
   else {
        computerChoice = "scissors";
-  }
+  
+   
 
-  console.log(computerChoice);
+ }
+  
+ // console.log(computerChoice);
+  
 }
 
 
@@ -68,26 +72,31 @@ computerSelection = getComputerChoice();
 var wins = 0;
 var losses = 0;
 
-for (var x = 0; x < 5; x += 1) {
+
+
+for (var x = 0; x < 3; x += 1) {
 
 var playerSelection = prompt("enter selection: rock, paper or scissors", '', [x][0]);
 
  if (playerSelection == "rock") {
- 
+   console.log(computerChoice);
    console.log('you pressed rock');
    playRound();
+   getComputerChoice()
  }
  
     else if (playerSelection == "paper") {
-
+      console.log(computerChoice);
     console.log('you pressed paper');
     playRound();
+    getComputerChoice()
  }
 
     else if (playerSelection == "scissors") {
-
+      console.log(computerChoice);
     console.log('you pressed scissors');
     playRound();
+    getComputerChoice()
  }
 
     else {
@@ -95,8 +104,6 @@ var playerSelection = prompt("enter selection: rock, paper or scissors", '', [x]
 
  };
 }
-
-
 
 
 
@@ -119,20 +126,6 @@ let score;
 
 
 
-if (wins > losses) {
-  console.log("You won more games!");
- }
- 
- else if (wins < losses) {
- 
-  console.log("You lost more games");
- 
- }
- 
- else {
-  console.log("Its a draw!");
- };
- 
 
   // LINKKIG GAME COMPARISONS
 
@@ -177,15 +170,30 @@ if (playerSelection === "rock" &&  computerChoice === "paper" ||
 console.log("You have won " + wins + " games!");
 console.log("You have lost " + losses + " games!");
 
+/*
 for (let i = 0; i < 4; i++) {
  
   i = score;
   score = playRound();
 
 };
+*/
 
 
-
+if (wins > losses) {
+  console.log("You won more games!");
+ }
+ 
+ else if (wins < losses) {
+ 
+  console.log("You lost more games");
+ 
+ }
+ 
+ else {
+  console.log("Its a draw!");
+ };
+ 
 
 
 /*
