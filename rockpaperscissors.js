@@ -1,4 +1,5 @@
 
+
 var rockBtn = document.getElementById("rockBtn");
 var paperBtn = document.getElementById("paperBtn");
 var scissorsBtn = document.getElementById("scissorsBtn");
@@ -17,22 +18,25 @@ function getComputerChoice() {
 
 if (randomValue === 2) {
   computerChoice = "rock";
+ // alert("rock");
+  
 } 
 
  else if (randomValue === 1) {
   computerChoice = "paper";
+ // alert("rock");
  }
 
   else {
-       computerChoice = "scissors";
+   computerChoice = "scissors";
+  // alert("rock");  
   
-   
-
  }
   
- // console.log(computerChoice);
-  
+  console.log(computerChoice);
+  return computerChoice;
 }
+
 
 
 
@@ -41,39 +45,42 @@ computerSelection = getComputerChoice();
 
 
 //GET PLAYER SELECTION
-/*
-  rockBtn.addEventListener('click', () => {
 
+  rockBtn.addEventListener('click', () => {
+  //  console.log(computerChoice);
+    getComputerChoice()
     playerSelection = "rock";
     console.log("you pressed rock!");
-  
     playRound();
-
  });
 
   paperBtn.addEventListener('click', () => {
-
+  //  console.log(computerChoice);
+    getComputerChoice()
     playerSelection = "paper";
     console.log("you pressed paper!");
     playRound();
+     
+   // document.getElementById('container').innerHTML;
 });
 
   scissorsBtn.addEventListener('click', () => {
-
+  //  console.log(computerChoice);
+    getComputerChoice()
     playerSelection = "scissors";
     console.log("you pressed scissors!");
-
-
     playRound();
+    
+   // document.getElementById('container').innerHTML;
 });
 
-*/
+
 
 var wins = 0;
 var losses = 0;
 
 
-
+/*
 for (var x = 0; x < 3; x += 1) {
 
 var playerSelection = prompt("enter selection: rock, paper or scissors", '', [x][0]);
@@ -104,7 +111,7 @@ var playerSelection = prompt("enter selection: rock, paper or scissors", '', [x]
 
  };
 }
-
+*/
 
 
 
@@ -125,8 +132,6 @@ var playerSelection = prompt("enter selection: rock, paper or scissors", '', [x]
 let score;
 
 
-
-
   // LINKKIG GAME COMPARISONS
 
 function playRound() {
@@ -139,7 +144,7 @@ function playRound() {
     playerSelection == "scissors" && computerChoice == "scissors") {
       
       console.log("draw");
-
+      
    
   }
 
@@ -149,7 +154,7 @@ function playRound() {
 
       wins++;
       console.log("you win");
-
+       
      
   } 
 
@@ -159,10 +164,10 @@ if (playerSelection === "rock" &&  computerChoice === "paper" ||
 
       losses++;
       console.log("pc win");
-    
+       
   } 
 
-
+ 
 };
 
 
@@ -179,7 +184,6 @@ for (let i = 0; i < 4; i++) {
 };
 */
 
-
 if (wins > losses) {
   console.log("You won more games!");
  }
@@ -194,6 +198,63 @@ if (wins > losses) {
   console.log("Its a draw!");
  };
  
+
+ 
+
+ var div = document.getElementById('container').innerHTML;
+
+ container.textContent = "testing";
+
+var para = document.createElement("p");
+
+para.textContent = "SEcond level testing";
+
+container.appendChild(para);
+
+container.style.backgroundColor = "red";
+
+//para.appendChild(playRound());
+
+
+
+//let gameResult = playRound();
+//container.textContent = gameResult;
+
+
+
+
+var game = document.createElement("p");
+
+game.textContent = "THIRD LEVEL testing";
+
+//game = rockBtn;
+rockBtn.textContent = "you pressed rock"
+
+container.appendChild(game);
+
+
+
+//computerSelection = getComputerChoice();
+//playRound();
+//computerChoice];
+
+
+
+
+
+
+//const paras = createElementNode("eldone");
+
+//eldone.textContent(getComputerChoice());
+
+//para.appendChild(eldone);
+
+//document.getElementById("container").innerHTML = (computerSelection);
+
+
+
+
+//div.appendChild(playRound());
 
 
 /*
