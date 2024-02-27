@@ -1,0 +1,32 @@
+
+
+p {
+    height: 40px;
+    width: 580px;
+    justify-content: space-around;
+    margin-left: 210px;
+    text-align: center;
+    align-content: center;
+}
+
+.container {
+
+    justify-content: space-around;
+}
+
+button {
+
+    margin-left: 10px;
+    background-color: aquamarine;
+    color: blue;
+    font-weight: 700;
+    height: 250px;
+    font-size: large;
+    width: 350px;
+}
+
+.pararesult {
+
+    margin-left: 10px;
+    
+}
