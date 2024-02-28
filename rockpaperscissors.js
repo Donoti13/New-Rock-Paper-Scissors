@@ -16,32 +16,20 @@ function getComputerChoice() {
 
 if (randomValue === 2) {
   computerChoice = "rock";
- 
-   
-  // playgame();
- // alert("rock");
   
 } 
 
  else if (randomValue === 1) {
   computerChoice = "paper";
  
-  
-  // playgame();
- // alert("rock");
  }
 
   else {
    computerChoice = "scissors";
-  
-   
-  // playgame();
-  // alert("rock");  
-  
+
  }
   
   console.log(computerChoice);
-//  return computerChoice;
 }
 
 
@@ -56,12 +44,15 @@ computerSelection = getComputerChoice();
 
 
   rockBtn.addEventListener('click', () => {
-  //  console.log(computerChoice);
-    getComputerChoice();
+  
+  if(gamerounds<= 4){
+
+    //  console.log(computerChoice);
+  //  getComputerChoice();
     playerSelection = "rock";
     console.log("you pressed rock!");
     playRound();
-    playgame();
+  playgame();
     para.textContent = score;
     paratwo.textContent = "COMPUTER CHOSE" + " " + computerChoice;
     parathree.textContent = "PLAYER CHOSE" + " " + playerSelection;
@@ -71,15 +62,30 @@ computerSelection = getComputerChoice();
     
     //pararesulttwo.textContent = "GAME RESULT LOSS: " + numberloss;
   //  alert("rock");
+
+}else{
+  alert("GAME OVER! Press OK to start another game");
+  para.textContent = score;
+  paratwo.textContent = "COMPUTER CHOSE" + " " ;
+  parathree.textContent = "PLAYER CHOSE" + " " ;
+  parawin.textContent = "NUMBER OF WINS: " ;
+  paralosses.textContent = "NUMBER OF LOSSES: " ;
+  pararesult.textContent = "GAME RESULT: " ;
+  location.reload(true);
+}
+
  });
 
   paperBtn.addEventListener('click', () => {
   //  console.log(computerChoice);
-    getComputerChoice();
+  //  getComputerChoice();
+
+  if(gamerounds<= 4){
+
     playerSelection = "paper";
     console.log("you pressed paper!");
     playRound();
-    playgame();
+   playgame();
  //   alert("paper");
     para.textContent = score; 
     paratwo.textContent = "COMPUTER CHOSE" + " " + computerChoice;
@@ -89,15 +95,27 @@ computerSelection = getComputerChoice();
     pararesult.textContent = "GAME RESULT: " + gameres;
    // pararesulttwo.textContent = "GAME RESULT LOSS: " + numberloss
     // document.getElementById('container').innerHTML;
+  }else{
+    alert("GAME OVER! Press OK to start another game");
+    para.textContent = score;
+    paratwo.textContent = "COMPUTER CHOSE" + " " ;
+    parathree.textContent = "PLAYER CHOSE" + " " ;
+    parawin.textContent = "NUMBER OF WINS: " ;
+    paralosses.textContent = "NUMBER OF LOSSES: " ;
+    pararesult.textContent = "GAME RESULT: " ;
+    location.reload(true);
+}
 });
 
   scissorsBtn.addEventListener('click', () => {
+    if(gamerounds<= 4){
+
   //  console.log(computerChoice);
-    getComputerChoice();
+  //  getComputerChoice();
     playerSelection = "scissors";
     console.log("you pressed scissors!");
     playRound();
-    playgame();
+  playgame();
   //  alert("scissors");
     para.textContent = score;
     paratwo.textContent = "COMPUTER CHOSE" + " " + computerChoice;
@@ -107,6 +125,16 @@ computerSelection = getComputerChoice();
     pararesult.textContent = "GAME RESULT: " + gameres;
     //pararesulttwo.textContent = "GAME RESULT LOSS: " + numberloss
     // document.getElementById('container').innerHTML;
+    }else{
+      alert("GAME OVER! Press OK to start another game");
+      para.textContent = score;
+      paratwo.textContent = "COMPUTER CHOSE" + " " ;
+      parathree.textContent = "PLAYER CHOSE" + " " ;
+      parawin.textContent = "NUMBER OF WINS: " ;
+      paralosses.textContent = "NUMBER OF LOSSES: " ;
+      pararesult.textContent = "GAME RESULT: " ;
+      location.reload(true);
+    }
 });
 
 
@@ -160,15 +188,17 @@ var playerSelection = prompt("enter selection: rock, paper or scissors", '', [x]
 
 var score = "";
 
-
+var gamerounds = 0;
   // LINKKIG GAME COMPARISONS
 
 function playRound() {
- 
+  getComputerChoice();
+ if (gamerounds <= 5){
     if (playerSelection == "rock" &&  computerChoice == "rock" || 
     playerSelection == "paper" && computerChoice == "paper" || 
     playerSelection == "scissors" && computerChoice == "scissors") {
-    score = "Round Result: DRAW";
+    score = "ROUND RESULT: DRAW";
+    gamerounds += 1;
       console.log("draw");
      // getComputerChoice()
     //  alert("draw");
@@ -178,9 +208,9 @@ function playRound() {
   if (playerSelection === "rock" &&  computerChoice === "scissors" || 
     playerSelection === "paper" && computerChoice === "rock" || 
     playerSelection === "scissors" && computerChoice === "paper") {
-
+      gamerounds += 1;
       wins++;
-      score = "Round Result: YOU WIN";
+      score = "ROUND RESULT: YOU WIN";
       console.log("you win");
      // getComputerChoice()
     //  alert("you win");
@@ -190,13 +220,14 @@ function playRound() {
 if (playerSelection === "rock" &&  computerChoice === "paper" || 
     playerSelection === "paper" && computerChoice === "scissors" || 
     playerSelection === "scissors" && computerChoice === "rock") {
-
+      gamerounds += 1;
       losses++;
-      score = "Round Result: PC WIN";
+      score = "ROUND RESULT: PC WIN";
       console.log("pc win");
      // getComputerChoice()
      // alert("pc win"); 
   } 
+}
 };
 
 
@@ -346,6 +377,7 @@ playgame();
  container.appendChild(content);
  
  container.style.backgroundColor = "brown";
+ 
 
  // content.appendChild(playRound());
  
